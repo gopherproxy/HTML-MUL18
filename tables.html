@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Tables</title>
@@ -8,26 +8,58 @@
 <body>
 <table width="800" border="1">
   <caption>
-  Table design
+  The animal table
   </caption>
   <tbody>
     <tr>
-      <td colspan="3">Table cell</td>
+      <th scope="colgroup" colspan="3">Predatory animals</th>
     </tr>
     <tr>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
+      <td><strong>Species</strong></td>
+      <td><strong>Latin name</strong></td>
+      <td><strong>Image</strong></td>
     </tr>
     <tr>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
+      <td>Brown bear</td>
+      <td><em>Ursus arctos</em></td>
+      <td><figure><img src="images/thumb-brown-bear-20016.jpg" width="140" height="100" alt="Brown bear"/>
+          <figcaption>Brown bear</figcaption>
+        </figure></td>
     </tr>
     <tr>
-      <td colspan="3">Table cell</td>
+      <td>Badger</td>
+      <td><em>Meles meles</em></td>
+      <td><figure><img src="images/thumb-badger-47642.jpg" width="132" height="100" alt="Badger"/>
+          <figcaption>Badger</figcaption>
+        </figure></td>
+    </tr>
+    <tr>
+      <td>Fox</td>
+      <td><em>Vulpes Vulpes</em></td>
+      <td><figure><img src="images/thumb-fox-17594.jpg" width="149" height="100" alt="Fox"/>
+          <figcaption>Fox</figcaption>
+        </figure></td>
+    </tr>
+    <tr>
+      <td>Sand cat</td>
+      <td><em>Felis margarita</em></td>
+      <td><figure><img src="images/thumb-sand-cat-132685.jpg" width="149" height="100" alt="Sand cat"/>
+          <figcaption>Sand cat</figcaption>
+        </figure></td>
+    </tr>
+    <tr>
+      <td>Wild cat</td>
+      <td><em>Felis silvestris</em></td>
+      <td><figure><img src="images/thumb-wild-cat-20503.jpg" width="122" height="100" alt="Wild cat"/>
+          <figcaption>Wild cat</figcaption>
+        </figure></td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">All pictures from <a href="//www.naturephoto-cz.com/mammals/predatory-animals.html" target="_blank">http://www.naturephoto-cz.com/mammals/predatory-animals.html</a></td>
+    </tr>
+  </tfoot>
 </table>
 </body>
 </html>
