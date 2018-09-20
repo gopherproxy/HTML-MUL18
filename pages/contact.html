@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Contact me</title>
@@ -22,7 +22,7 @@
 <!-- Navigation -->
 <nav> <a href="../index.html">Home</a> <a href="hello-world.html">Hello world</a> <a href="tables.html">The animal table</a> <a href="#">Contact me</a> <a href="//www.cphbusiness.dk/" target="_blank">My school</a> </nav>
 <!-- webform -->
-<form action="mailto:klu@cphbusiness.dk" method="post" enctype="text/plain">
+<form action="mailto:klu@cphbusiness.dk?subject=Contact%20via%20form" method="post" enctype="text/plain">
   <p>
     <label>Your Name:</label>
   </p>
@@ -33,13 +33,18 @@
     <label>Your Email:</label>
   </p>
   <p>
-    <input type="email" name="email" placeholder="Type a valid mail address.." autofocus required>
+    <input type="email" name="email" placeholder="Type a valid mail address.." required>
   </p>
   <p>
     <label>Your Message:</label>
   </p>
   <p><textarea name="comment" placeholder="Your message..."></textarea></p>
-  <p>I love this!<input type="radio" name="love"></p>
+  <hr>
+  <p>I love it<input type="radio" name="love" value="yes" checked></p>
+  <p>I hate it<input type="radio" name="love" value="no"></p>
+  <hr>
+  <p>I wan't to receive SPAM<input type="checkbox" name="spam" value="yes" checked></p>
+  
   <input type="submit" value="Submit Form">
 </form>
 </body>
