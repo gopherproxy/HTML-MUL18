@@ -4,48 +4,84 @@
 <meta charset="utf-8">
 <title>Contact me</title>
 <style>
-	/* Form styles */
-	form {
-		width: 40vw;
-		margin: 20px auto;
-		border: 1px solid black;
-		padding: 20px;
-	}
-	
+/* layout */
+#container {
+	width: 80%;
+	min-height: 90vh;
+	margin: auto;
+	border: 1px solid black;
+}
+#header {
+	border-bottom: 1px solid black;
+	padding: 10px;
+	text-align: center;
+	background-color: lavender;
+}
+#nav {
+	border-bottom: 1px solid black;
+	padding: 10px;
+}
+#main {
+	padding: 10px;
+}
+/* form styles */
+form {
+	width: 40vw;
+	margin: 20px auto;
+	border: 1px solid black;
+	padding: 20px;
+}
 </style>
 </head>
 
 <body>
-<header>
-  <h1>Contact me!</h1>
-</header>
-<!-- Navigation -->
-<nav> <a href="../index.html">Home</a> <a href="hello-world.html">Hello world</a> <a href="tables.html">The animal table</a> <a href="#">Contact me</a> <a href="//www.cphbusiness.dk/" target="_blank">My school</a> </nav>
-<!-- webform -->
-<form action="mailto:klu@cphbusiness.dk?subject=Contact%20via%20form" method="post" enctype="text/plain">
-  <p>
-    <label>Your Name:</label>
-  </p>
-  <p>
-    <input type="text" name="name" placeholder="Type your name.." autofocus required>
-  </p>
-  <p>
-    <label>Your Email:</label>
-  </p>
-  <p>
-    <input type="email" name="email" placeholder="Type a valid mail address.." required>
-  </p>
-  <p>
-    <label>Your Message:</label>
-  </p>
-  <p><textarea name="comment" placeholder="Your message..."></textarea></p>
-  <hr>
-  <p>I love it<input type="radio" name="love" value="yes" checked></p>
-  <p>I hate it<input type="radio" name="love" value="no"></p>
-  <hr>
-  <p>I wan't to receive SPAM<input type="checkbox" name="spam" value="yes" checked></p>
-  
-  <input type="submit" value="Submit Form">
-</form>
+<!-- main layout container -->
+<div id="container">
+  <div id="header">
+    <header>
+      <h1>Contact me!</h1>
+    </header>
+  </div>
+  <div id="nav"> 
+    <!-- Navigation -->
+    <nav> <a href="../index.html">Home</a> <a href="hello-world.html">Hello world</a> <a href="tables.html">The animal table</a> <a href="#">Contact me</a> <a href="//www.cphbusiness.dk/" target="_blank">My school</a> </nav>
+  </div>
+  <div id="main"> 
+    <!-- webform -->
+    <form action="mailto:klu@cphbusiness.dk?subject=Contact%20via%20form" method="post" enctype="text/plain">
+      <p>
+        <label>Your Name:</label>
+      </p>
+      <p>
+        <input type="text" name="name" placeholder="Type your name.." autofocus required>
+      </p>
+      <p>
+        <label>Your Email:</label>
+      </p>
+      <p>
+        <input type="email" name="email" placeholder="Type a valid mail address.." required>
+      </p>
+      <p>
+        <label>Your Message:</label>
+      </p>
+      <p>
+        <textarea name="comment" placeholder="Your message..."></textarea>
+      </p>
+      <hr>
+      <p>I love it
+        <input type="radio" name="love" value="yes" checked>
+      </p>
+      <p>I hate it
+        <input type="radio" name="love" value="no">
+      </p>
+      <hr>
+      <p>I wan't to receive SPAM
+        <input type="checkbox" name="spam" value="yes" checked>
+      </p>
+      <input type="submit" value="Submit Form">
+    </form>
+  </div>
+  <div id="footer"></div>
+</div>
 </body>
 </html>
