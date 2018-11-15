@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>Eksempel</title>
+<meta charset="utf-8" />
+</head>
+
+<body>
+<main>
+  <input type="text" id="tekstfelt" />
+  <input type="button" id="knap" value="Tryk her" onclick="klik()"/>
+  <div id="resultat"> Svaret kommer her... </div>
+</main>
+<script>
+
+function klik() {
+
+var brugerensNavn = document.getElementById("tekstfelt").value;
+
+
+
+document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
+
+
+}
+
+</script>
+</body>
+</html>
