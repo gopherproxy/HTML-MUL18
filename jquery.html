@@ -1,18 +1,55 @@
 <!doctype html>
 <html>
 <head>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	
+	nav {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 9999;
+		width: 100%;
+		height: 50px;
+		background: white;
+	}
+	section {
+		display:block;
+		height: 100vh;
+		padding-top: 50px;
+	}
+	#home {
+		background: lightgreen;
+	}
+	#contact {
+		background: lightblue;
+	}
+</style>
 <title>Eksempel</title>
 <meta charset="utf-8" />
+<!-- loading jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- loading scrollTo plugin -->
+<script src="scripts/jquery.scrollTo.min.js"></script>
 <script>
 	
 	$(document).ready(function(){
+		// bliver udført, når dokumentet er klar!
 		
 		var msg = $('#resultat');
-		// bliver udført, når dokumentet er læst ind!
+		
 		console.log('jQuery er der!');
 		$('#knap').click(klik);
 		
+		// implementing scroll animation
+		$('nav a').click(function(){
+			$(window).scrollTo(this.hash, 1000);
+		});
+				
 		function klik() {
 		
 		if(!$('#tekstfelt').val()){
@@ -20,7 +57,7 @@
 			msg.html('Please - fill in your name!').css('color', 'red');
 		   } else{
 			  var brugerensNavn = $('#tekstfelt').val();
-			  msg.html('Hej ' + brugerensNavn).css('color', 'green');;
+			  msg.html('Hej ' + brugerensNavn).css('color', 'green');
 		   	//var brugerensNavn = document.getElementById("tekstfelt").value;
 			//document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
 		   }	   
@@ -28,21 +65,23 @@
 	}
 						
 });
-	
-	//var trigger = document.getElementById('knap');
-	//trigger.addEventListener('click', klik);
-	
-	
-	
 
 </script>
 </head>
 
 <body>
-<main>
+<nav>
+	<a href="#home">Homepage</a>
+	<a href="#contact">Contact us</a>
+</nav>
+<section id="home">
+  <h1>This is the content for home</h1>
+</section>
+	
+<section id="contact">
   <input type="text" id="tekstfelt" />
   <input type="button" id="knap" value="Tryk her"/>
   <div id="resultat"> Svaret kommer her... </div>
-</main>
+</section>
 </body>
 </html>
