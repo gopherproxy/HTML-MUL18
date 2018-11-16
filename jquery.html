@@ -1,87 +1,87 @@
 <!doctype html>
 <html>
 <head>
-<style>
-	body {
-		margin: 0;
-		padding: 0;
-		border: 0;
-	}
-	
-	nav {
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		z-index: 9999;
-		width: 100%;
-		height: 50px;
-		background: white;
-	}
-	section {
-		display:block;
-		height: 100vh;
-		padding-top: 50px;
-	}
-	#home {
-		background: lightgreen;
-	}
-	#contact {
-		background: lightblue;
-	}
-</style>
+<meta charset="utf-8">
+<!-- loading lightbox gallery and own styles -->
+<link rel="stylesheet" type="text/css" href="css/featherlight.min.css">
+<link rel="stylesheet" type="text/css" href="css/featherlight.gallery.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 <title>Eksempel</title>
-<meta charset="utf-8" />
-<!-- loading jQuery -->
+<!-- loading jQuery (altid først!) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- loading scrollTo plugin -->
 <script src="scripts/jquery.scrollTo.min.js"></script>
+<!-- loading lightbox and gallery scripts -->
+<script src="scripts/featherlight.min.js"></script>
+<script src="scripts/featherlight.gallery.min.js"></script>
 <script>
 	
 	$(document).ready(function(){
-		// bliver udført, når dokumentet er klar!
+		// alt indefor denne anonyme funktion bliver først udført, når dokumentet (DOM) er klar!
 		
+		// en variabel, som kan bruges indenfor denne funktion (variable scope!) 
 		var msg = $('#resultat');
 		
+		// skriver ind i konsolen (test og debug feature)
 		console.log('jQuery er der!');
+		
+		// jQuery selector (id knap) samt eventhandler (click), som udfører funktionen klik
 		$('#knap').click(klik);
 		
-		// implementing scroll animation
+		// implementering af scroll animationen
 		$('nav a').click(function(){
+			// this = elementet som "ejer" (= udløser) funktionen, 
+			// this.hash læser href attributet af elementet, og få fat i en URL som starter med #
 			$(window).scrollTo(this.hash, 1000);
 		});
-				
-		function klik() {
 		
+		// en funktion
+		function klik() {
+		// hvis tekstfelt har ingen (!) value
 		if(!$('#tekstfelt').val()){
 		   //alert('Please - fill in your name!');
-			msg.html('Please - fill in your name!').css('color', 'red');
-		   } else{
+			msg.html('Navnfeltet skal være udfyldt!').css('color', 'red');
+		   } else{ // dvs. hvis tekstfelt har et værdi (er udfyldt)
 			  var brugerensNavn = $('#tekstfelt').val();
-			  msg.html('Hej ' + brugerensNavn).css('color', 'green');
-		   	//var brugerensNavn = document.getElementById("tekstfelt").value;
-			//document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
+			  msg.html('Hej, ' + brugerensNavn).css('color', 'green');
 		   }	   
 			
 	}
+		
+	// lightbox gallery -->
+  	$('.gallery').featherlightGallery({
+	// custom navigation typo
+	previousIcon: '«',
+   	nextIcon: '»',
+	// parameters
+    galleryFadeIn: 300,
+    openSpeed: 300
+	}); // <-- end lightbox gallery	
 						
-});
+});// <-- end (document).ready	
 
 </script>
 </head>
 
 <body>
-<nav>
-	<a href="#home">Homepage</a>
-	<a href="#contact">Contact us</a>
-</nav>
+<nav> <a href="#home">Homepage</a> <a href="#galleri">Galleri</a> <a href="#kontakt">Kontakt</a> </nav>
 <section id="home">
-  <h1>This is the content for home</h1>
+  <h1>jQuery one page scrolling animation eksempel</h1>
 </section>
-	
-<section id="contact">
-  <input type="text" id="tekstfelt" />
-  <input type="button" id="knap" value="Tryk her"/>
-  <div id="resultat"> Svaret kommer her... </div>
+<section id="galleri">
+  <h1>Gallery med lightbox feature</h1>
+	<h2>Digitale karikaturer</h2>
+        <div class="centered">
+        <a class="gallery" href="images/jennifer_lawrence.jpg"><img src="images/jennifer_lawrence.jpg" width="210" height="280" alt="Jennifer Lawrence caricature"/><span class="caption">Jennifer Lawrence</span></a>
+        <a class="gallery" href="images/charlie_sheen.jpg"><img src="images/charlie_sheen.jpg" width="210" height="280" alt="Charlie Sheen caricature"/><span class="caption">Charlie Sheen</span></a>
+        <a class="gallery" href="images/darth_vader.jpg"><img src="images/darth_vader.jpg" width="210" height="280" alt="Darth Vader caricature"/><span class="caption">Darth Vader uncovered!</span></a>
+        <a class="gallery" href="images/krysten_ritter.jpg"><img src="images/krysten_ritter.jpg" width="210" height="280" alt="Krysten Ritter caricature"/><span class="caption">Krysten Ritter</span></a>
+        </div>
+</section>
+<section id="kontakt">
+  <input type="text" id="tekstfelt" placeholder="Dit navn">
+  <input type="button" id="knap" value="Tryk her">
+  <div id="resultat">Indtast dit navn... </div>
 </section>
 </body>
 </html>
