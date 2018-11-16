@@ -3,27 +3,39 @@
 <head>
 <title>Eksempel</title>
 <meta charset="utf-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	
+	$(document).ready(function(){
+		// bliver udført, når dokumentet er læst ind!
+		console.log('jQuery er der!');
+		$('#knap').click(klik);
+				
+	});
+	
+	//var trigger = document.getElementById('knap');
+	//trigger.addEventListener('click', klik);
+
+	function klik() {
+		
+		if(!$('#tekstfelt').val()){
+		   alert('Please - fill in your name!');
+		   }else{
+		   
+		   }
+		   
+			var brugerensNavn = document.getElementById("tekstfelt").value;
+			document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
+	}
+
+</script>
 </head>
 
 <body>
 <main>
   <input type="text" id="tekstfelt" />
-  <input type="button" id="knap" value="Tryk her" onclick="klik()"/>
+  <input type="button" id="knap" value="Tryk her"/>
   <div id="resultat"> Svaret kommer her... </div>
 </main>
-<script>
-
-function klik() {
-
-var brugerensNavn = document.getElementById("tekstfelt").value;
-
-
-
-document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
-
-
-}
-
-</script>
 </body>
 </html>
