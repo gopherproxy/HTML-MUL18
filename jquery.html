@@ -7,26 +7,33 @@
 <script>
 	
 	$(document).ready(function(){
+		
+		var msg = $('#resultat');
 		// bliver udført, når dokumentet er læst ind!
 		console.log('jQuery er der!');
 		$('#knap').click(klik);
-				
-	});
+		
+		function klik() {
+		
+		if(!$('#tekstfelt').val()){
+		   //alert('Please - fill in your name!');
+			msg.html('Please - fill in your name!').css('color', 'red');
+		   } else{
+			  var brugerensNavn = $('#tekstfelt').val();
+			  msg.html('Hej ' + brugerensNavn).css('color', 'green');;
+		   	//var brugerensNavn = document.getElementById("tekstfelt").value;
+			//document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
+		   }	   
+			
+	}
+						
+});
 	
 	//var trigger = document.getElementById('knap');
 	//trigger.addEventListener('click', klik);
-
-	function klik() {
-		
-		if(!$('#tekstfelt').val()){
-		   alert('Please - fill in your name!');
-		   }else{
-		   
-		   }
-		   
-			var brugerensNavn = document.getElementById("tekstfelt").value;
-			document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
-	}
+	
+	
+	
 
 </script>
 </head>
