@@ -15,5 +15,20 @@ var input, bmi, msg;
 
 function calculateBMI() {
 	'use strict';
+	// test
+	console.log('Form er på vej!');
+	
+	input = document.getElementsByTagName('input');
+	// input er et array med alle input elementer fra formen
+	console.log(input);
+	// lokale variabler (let), kan kun bruges indenfor funktionen!
+	let w = input[0].value;
+	let h = input[1].value;
+	// contatenation af brugerens input
+	console.log('Weight: ' + w + ', height: ' + h);
+	
+	// funktioner giver "false" (< her er noget forkert!) tilbage til formen
+	// En form bliver kun sent ved "true" tilstand ;-)
+	return false;
 
 }
