@@ -17,8 +17,10 @@ function calculateBMI() {
 	'use strict';
 	// test
 	console.log('Form er på vej!');
-	
+
 	input = document.getElementsByTagName('input');
+	msg = document.getElementById('msg');
+
 	// input er et array med alle input elementer fra formen
 	console.log(input);
 	// lokale variabler (let), kan kun bruges indenfor funktionen!
@@ -26,9 +28,22 @@ function calculateBMI() {
 	let h = input[1].value;
 	// contatenation af brugerens input
 	console.log('Weight: ' + w + ', height: ' + h);
+
+	// Beregningen af BMI
+	bmi = (w / (h * h)).toFixed(2);
 	
+	// Feedback til brugeren
+	if (bmi < 18.5 ) {
+		msg.innerHTML = 'BMI = ' + bmi + ' - Underweight!';
+	} else if (bmi <= 25) {
+		msg.innerHTML = 'BMI = ' + bmi + ' - Normal (healthy weight)!';
+	} else if (bmi <= 30) {
+		msg.innerHTML = 'BMI = ' + bmi + ' - Overweight!';
+	} else {
+		msg.innerHTML = 'BMI = ' + bmi + ' - You\'re an American!';
+	}
+
 	// funktioner giver "false" (< her er noget forkert!) tilbage til formen
 	// En form bliver kun sent ved "true" tilstand ;-)
 	return false;
-
 }
