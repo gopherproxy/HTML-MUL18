@@ -35,12 +35,27 @@ function calculateBMI() {
 	// Feedback til brugeren
 	if (bmi < 18.5 ) {
 		msg.innerHTML = 'BMI = ' + bmi + ' - Underweight!';
+		
+		// dynamiske CSS classes med JavaScript:
+		msg.removeAttribute("class"); // nullstiller CSS fra ev tidligere forsøg
+		msg.classList.add('alert-light'); // tilføjer en bootstrap class
+		msg.classList.add('p-4'); // tilføjer en yderlige klasse (padding 4)
+		
 	} else if (bmi <= 25) {
 		msg.innerHTML = 'BMI = ' + bmi + ' - Normal (healthy weight)!';
+		msg.removeAttribute("class");
+		msg.classList.add('alert-success');
+		msg.classList.add('p-4');
 	} else if (bmi <= 30) {
 		msg.innerHTML = 'BMI = ' + bmi + ' - Overweight!';
+		msg.removeAttribute("class");
+		msg.classList.add('alert-warning');
+		msg.classList.add('p-4');
 	} else {
 		msg.innerHTML = 'BMI = ' + bmi + ' - You\'re an American!';
+		msg.removeAttribute("class");
+		msg.classList.add('alert-danger');
+		msg.classList.add('p-4');
 	}
 
 	// funktioner giver "false" (< her er noget forkert!) tilbage til formen
