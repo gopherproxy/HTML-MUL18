@@ -23,10 +23,10 @@ function calculateBMI() {
 
 	// input er et array med alle input elementer fra formen
 	console.log(input);
-	// lokale variabler (let), kan kun bruges indenfor funktionen!
+	// lokale variabler (let), kan kun bruges inden for funktionen!
 	let w = input[0].value;
 	let h = input[1].value;
-	// contatenation af brugerens input
+	// concatenation af brugerens input
 	console.log('Weight: ' + w + ', height: ' + h);
 
 	// Beregningen af BMI
