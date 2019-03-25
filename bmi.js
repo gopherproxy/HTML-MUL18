@@ -58,7 +58,7 @@ function calculateBMI() {
 		msg.classList.add('p-4');
 	}
 
-	// funktioner giver "false" (< her er noget forkert!) tilbage til formen
-	// En form bliver kun sent ved "true" tilstand ;-)
+	// funktionen giver "false" (< her er noget forkert!) tilbage til formen
+	// En form bliver kun sent ved "true" ;-)
 	return false;
 }
